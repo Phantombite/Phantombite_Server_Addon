@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Blueprints>
+        <!-- Anti-Radiations-Heilungskit (Vanilla Item, jetzt im Assembler baubar) -->
+        <!-- Rezept: Medkit + Medical Components + Pflanzen (Mushrooms) + Uranium -->
+        <Blueprint>
+            <Id>
+                <TypeId>BlueprintDefinition</TypeId>
+                <SubtypeId>RadiationKit_Blueprint</SubtypeId>
+            </Id>
+            <DisplayName>DisplayName_Item_RadiationKit</DisplayName>
+            <Icon>Textures\GUI\Icons\Items\AntiRadiationMedkit.dds</Icon>
+            <Prerequisites>
+                <Item Amount="1" TypeId="ConsumableItem" SubtypeId="Medkit" />
+                <Item Amount="2" TypeId="Component" SubtypeId="Medical" />
+                <Item Amount="5" TypeId="ConsumableItem" SubtypeId="Mushrooms" />
+                <Item Amount="0.5" TypeId="Ingot" SubtypeId="Uranium" />
+            </Prerequisites>
+            <Result Amount="1" TypeId="ConsumableItem" SubtypeId="RadiationKit" />
+            <BaseProductionTimeInSeconds>12</BaseProductionTimeInSeconds>
+            <IsPrimary>true</IsPrimary>
+        </Blueprint>
+    </Blueprints>
+    
+    <BlueprintClassEntries>
+        <!-- Füge RadiationKit zum Assembler hinzu (Equipment-Kategorie) -->
+        <Entry Class="EliteEquipment" BlueprintSubtypeId="RadiationKit_Blueprint" />
+        <Entry Class="SimpleEquipment" BlueprintSubtypeId="RadiationKit_Blueprint" />
+    </BlueprintClassEntries>
+</Definitions>
